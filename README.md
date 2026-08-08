@@ -2,6 +2,11 @@
 
 Python과 Pico2D로 제작한 개인 프로젝트입니다. 고정된 던전의 전투 구역을 순서대로 돌파하고 포탈을 통해 보스전에 진입하는 탑다운 슈팅 게임입니다.
 
+<p align="center">
+  <img src="docs/images/combat.png" width="100%" alt="실제 실행 중 zone1 전투 화면">
+</p>
+<p align="center"><sub>Windows · Python 3.13.7 · Pico2D 1.5.1에서 직접 실행한 zone1 전투 화면입니다. (2026-08-08)</sub></p>
+
 | 항목 | 내용 |
 | --- | --- |
 | 개발 기간 | 2024년 2학기 |
@@ -73,17 +78,20 @@ Python과 Pico2D로 제작한 개인 프로젝트입니다. 고정된 던전의 
 
 ## 실행 방법
 
-Pico2D가 설치된 Python 환경에서 저장소 루트의 진입 파일을 실행합니다.
+Windows PowerShell에서 격리 환경을 만들고 검증한 의존성을 설치한 뒤 실행합니다.
 
-```bash
-python main_scene.py
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe main_scene.py
 ```
 
 ## 빌드·실행 확인
 
-소스와 리소스 경로는 확인했지만, 현재 저장소에는 Python·Pico2D 버전을 고정하는 의존성 파일이 없어 동일 실행 환경의 재현까지 검증하지 못했습니다.
+2026-08-08 Windows, Python 3.13.7, Pico2D 1.5.1에서 1152×648 창 실행, 이동·스크롤·`zone1` 진입, 적 생성, 피격·HP 감소와 게임 오버 전환을 확인했습니다. 두 실행 모두 표준 오류 출력 없이 종료했습니다.
 
 ## 리소스 안내
 
 `gfw/`는 수업 제공 프레임워크이며 `res/`에는 외부 게임에서 유래한 이미지·폰트 리소스가 포함되어 있습니다. 이 저장소는 학습 목적의 비상업 프로젝트이며, 코드 외 리소스의 재배포 전에는 각 권리를 별도로 확인해야 합니다.
+
 
